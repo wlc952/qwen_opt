@@ -1,6 +1,9 @@
 import argparse
 
-import chat
+try: 
+    import repo.qwen.python_demo_opt.chat as chat
+except:
+    import chat
 import time
 from transformers import AutoTokenizer
 
