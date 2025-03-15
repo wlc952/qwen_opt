@@ -1,0 +1,1 @@
+python3 -m dfss --url=open@sophgo.com:/ext_model_information/LLM/LLM-TPU/qwen2.5-3b_int4_seq4096_1dev_opt.bmodel
