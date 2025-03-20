@@ -6,10 +6,12 @@ if (NOT DEFINED TARGET_ARCH)
 endif()
 
 set(CMAKE_CXX_STANDARD 17)
+set(PLATFORM_TYPE "soc" CACHE STRING "Platform type: pcie or soc")
+message(STATUS "Compiling for platform: ${PLATFORM_TYPE}")
 
 include_directories(${PROJECT_SOURCE_DIR}/../support/include)
 
-if (${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64")
+if (PLATFORM_TYPE STREQUAL "pcie")
    	add_definitions(-DPCIE_TARGET)
     	link_directories(${PROJECT_SOURCE_DIR}/../support/lib_pcie)
 	message("PCIE mode, starting......")
